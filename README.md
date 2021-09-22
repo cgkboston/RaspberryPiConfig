@@ -1,5 +1,6 @@
 # RaspberryPiConfig Put this file in the Documents folder on a newly configured pi
 ================================================================================================================
+
 to configure the pi:
 1. boot the pi
 2. within one minute, chmod 600 bin/run_player.bash
@@ -7,6 +8,7 @@ to configure the pi:
 4. execute the two lines resulting from the last step
 5. make changes, for example update a Video in the Videos folder or touch a Video to make it the one to play.
 ================================================================================================================
+
 some commands to know
 1. cat /etc/wpa_supplicant/wpa_supplicant.conf
 2. omxplayer --help
