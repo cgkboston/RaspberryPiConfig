@@ -39,7 +39,7 @@ fi
 
 echo Starting the Video as a background process at `date`
 video=`ls -t /home/pi/Videos/*.mp4|head -1`
-/usr/bin/omxplayer -loop $video 2>&1 /dev/null
+/usr/bin/omxplayer --loop $video 2>&1 /dev/null
 echo =======================================================================================
 #/usr/bin/omxplayer --win 300,150,161,93 --vol 10000 --alpha 210 --loop $video 2>&1 /dev/null & 
 #/usr/bin/omxplayer --win 300,150,1610,930 --vol 10000 --alpha 210 --loop $video 2>&1 /dev/null & 
