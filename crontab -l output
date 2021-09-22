@@ -1,3 +1,4 @@
 0-55/5 0-6,20-23 * * 1-5 ~pi/bin/stop_player.bash # stop midnight to 7am everyday
 0-55/10 7-19 * * 1-5 ~pi/bin/run_player.bash > /home/pi/player.out # start 8am to 8pm weekdays
-@reboot ~pi/bin/run_player.bash init > /home/pi/player.out
+@reboot /usr/bin/chromium-browser www.wnyc.org/streams &
+@reboot ~pi/bin/run_player.bash init 1>&2 ~pi/player.out
