@@ -1,4 +1,6 @@
-0-55/5 0-6,20-23 * * 1-5 ~pi/bin/stop_player.bash # stop midnight to 7am everyday
-0-55/10 7-19 * * 1-5 ~pi/bin/run_player.bash > /home/pi/player.out # start 8am to 8pm weekdays
-@reboot /usr/bin/chromium-browser www.wnyc.org/streams &
-@reboot ~pi/bin/run_player.bash init 1>&2 ~pi/player.out
+#cron 1&2 below are on a 15 minute interval, */15; monday to friday, 1-5
+*/15 00-06,20-23 * * 1-5 /home/pi/bin/stop_player.bash > /home/pi/stop_player.out 2>&1 # stop 8pm to 7am daily m-f
+*/15 07-19       * * 1-5 /home/pi/bin/run_player.bash > /home/pi/run_player.out 2>&1 & # start 7am to 8pm weekdays
+#cron 3&4 below run at boot time
+@reboot /usr/bin/chromium-browser www.wnyc.org/streams > /dev/null 2>&1 & # play some new standards music if you'd like
+@reboot /home/pi/bin/run_player.bash init > /home/pi/init_player.out 2>&1 & # init player at reboot
